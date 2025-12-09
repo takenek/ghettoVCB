@@ -92,7 +92,7 @@ EMAIL_ALERT=0
 EMAIL_LOG=0
 
 # Email Delay Interval from NC (netcat) - default 1
-EMAIL_DELAY_INTERVAL=1
+EMAIL_DELAY_INTERVAL=5
 
 # Email SMTP server
 EMAIL_SERVER=auroa.primp-industries.com
@@ -1513,7 +1513,7 @@ buildHeaders() {
 sendDelay() {
     c=0
     while read L; do
-    	[ $c -lt 4 ] && sleep ${EMAIL_DELAY_INTERVAL}
+    	[ $c -lt 9 ] && sleep ${EMAIL_DELAY_INTERVAL}
     	c=$((c+1))
     	echo $L
     done
